@@ -73,7 +73,12 @@ func (s *schema) SchemaToJSON(data map[string]interface{}) (interface{}, error) 
 				for k, v := range now {
 					or := result.(map[string]interface{})
 					if m, ok := v.(map[string]interface{}); ok {
-						or[k], _ = s.SchemaToJSON(m)
+						value, err := s.SchemaToJSON(m)
+						if err == nil {
+							or[k] = value
+						} else {
+							or[k] = make(map[string]interface{})
+						}
 					} else {
 						return nil, fmt.Errorf("%+v %s", v, NotValidMap)
 					}

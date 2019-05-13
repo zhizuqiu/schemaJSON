@@ -1,0 +1,13 @@
+/.idea/
+/target/
+/out/
+*.iml
+.classpath
+.project
+/bin/
+/WebRoot/WEB-INF/classes
+/.myeclipse/
+
+componentsServer.exe
+componentsServer
+routers/commentsRouter_*
