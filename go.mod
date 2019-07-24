@@ -1,4 +1,4 @@
-module schemaJSON
+module github.com/zhizuqiu/schemaJSON
 
 go 1.12
 
